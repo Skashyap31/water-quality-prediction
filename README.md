@@ -4,10 +4,10 @@ This project predicts whether a sample of water is safe for drinking (potable) u
 
 We apply data cleaning, preprocessing, and classification techniques to build an accurate model that can classify water quality based on various chemical and physical properties.
 
-📂 Dataset Information
+**📂 Dataset Information**
 The dataset contains features such as:
-
-Feature	Description
+**
+Feature	Description**
 pH	Acidity/alkalinity of water
 Hardness	Concentration of calcium and magnesium
 Solids	Total dissolved solids in ppm
@@ -19,12 +19,12 @@ Trihalomethanes	Toxic compounds formed during chlorination
 Turbidity	Clarity of water
 Potability	Target (1 = drinkable, 0 = not drinkable)
 
-ML Pipeline
-1. Load and Inspect Dataset
-2. Handle Missing Values (Imputation)
-3. Remove Duplicates
-4.Feature Scaling (Standardization)
-5. Train-Test Split
-6.Train Random Forest Classifier
-7.Predict and Evaluate
+**ML Pipeline**
+| Step               | Tool/Method Used                     |
+| ------------------ | ------------------------------------ |
+| Data Cleaning      | Pandas, SimpleImputer                |
+| Scaling            | StandardScaler                       |
+| Model              | Random Forest Classifier             |
+| Evaluation Metrics | Accuracy, F1-Score, Confusion Matrix |
+
 
