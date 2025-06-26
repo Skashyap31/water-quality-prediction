@@ -1,5 +1,6 @@
 # 💧 Water Quality Prediction using Machine Learning
 
+
 This project aims to predict the concentration of key water pollutants such as **O2, NO3, NO2, SO4, PO4, and CL** using machine learning techniques. The dataset used includes historical water quality data from multiple monitoring stations, and the model is trained to forecast future pollutant levels based on date and station information.
 
 ---
