@@ -1,30 +1,77 @@
-# water-quality-prediction
-Overview
-This project predicts whether a sample of water is safe for drinking (potable) using machine learning techniques. It is developed as part of the Edunet-AICTE Internship Program.
+# 💧 Water Quality Prediction using Machine Learning
 
-We apply data cleaning, preprocessing, and classification techniques to build an accurate model that can classify water quality based on various chemical and physical properties.
+This project aims to predict the concentration of key water pollutants such as **O2, NO3, NO2, SO4, PO4, and CL** using machine learning techniques. The dataset used includes historical water quality data from multiple monitoring stations, and the model is trained to forecast future pollutant levels based on date and station information.
 
-**📂 Dataset Information**
-The dataset contains features such as:
-**
-Feature	Description**
-pH	Acidity/alkalinity of water
-Hardness	Concentration of calcium and magnesium
-Solids	Total dissolved solids in ppm
-Chloramines	Disinfectant level
-Sulfate	Sulfate concentration
-Conductivity	Electrical conductivity of water
-Organic_carbon	Organic content
-Trihalomethanes	Toxic compounds formed during chlorination
-Turbidity	Clarity of water
-Potability	Target (1 = drinkable, 0 = not drinkable)
+---
 
-**ML Pipeline**
-| Step               | Tool/Method Used                     |
-| ------------------ | ------------------------------------ |
-| Data Cleaning      | Pandas, SimpleImputer                |
-| Scaling            | StandardScaler                       |
-| Model              | Random Forest Classifier             |
-| Evaluation Metrics | Accuracy, F1-Score, Confusion Matrix |
+## 📁 Dataset Overview
+
+- **File Name:** `PB_All_2000_2021.csv`
+- **Format:** CSV (`;` separated)
+- **Columns Include:**
+  - `id`: Station identifier
+  - `date`: Measurement date
+  - `O2`, `NO3`, `NO2`, `SO4`, `PO4`, `CL`: Target pollutants
+- **Years Covered:** 2000 to 2021
+
+---
+
+## 🎯 Goal
+
+To predict six important water pollutants using:
+- Station ID
+- Year
+- Month
+
+---
+
+## 🛠️ Technologies Used
+
+- **Language:** Python
+- **Libraries:**
+  - `pandas`, `numpy` for data handling
+  - `matplotlib`, `seaborn` for visualization
+  - `scikit-learn` for machine learning
+  - `joblib` for model saving
+
+---
+
+## 🔍 Steps Followed
+
+1. **Data Preprocessing**
+   - Convert date column to datetime
+   - Extract `year` and `month`
+   - Sort and clean dataset
+   - Drop rows with missing pollutant values
+
+2. **Feature Engineering**
+   - One-hot encode the `id` (station)
+
+3. **Modeling**
+   - Train a **RandomForestRegressor** wrapped in a **MultiOutputRegressor**
+   - Use `train_test_split` to split data into training/testing sets
+
+4. **Prediction**
+   - Custom prediction based on selected station, year, and month
+
+5. **Evaluation**
+   - Display R² Score, MAE, RMSE for each pollutant
+
+6. **Saving**
+   - Save trained model and feature list using `joblib`
+
+---
+
+## 📈 Sample Output
+
+```text
+Predicted pollutant levels for station 22 in June 2024:
+O2   : 7.18
+NO3  : 2.95
+NO2  : 0.43
+SO4  : 20.87
+PO4  : 0.35
+CL   : 12.60
+
 
 
